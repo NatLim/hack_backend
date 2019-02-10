@@ -17,16 +17,6 @@ namespace FoodApi.dbhelper
         public virtual ICollection<Product> Products { get; set; }
     }
 
-    public class Community
-    {
-        [Key]
-        public int Id { get; set; }
-        public int productId { get; set; }
-        public string Status { get; set; }
-        public string Method { get; set; }
-
-        public virtual Product Product { get; set; }
-    }
 
     public class FridgeProduct
     {
@@ -35,7 +25,6 @@ namespace FoodApi.dbhelper
         public int ProductId { get; set; }
         public decimal quantity { get; set; }
         public DateTime CreateDate { get; set; }
-        public bool IsActive { get; set; }
 
         public virtual Product Product { get; set; }
 
@@ -50,7 +39,6 @@ namespace FoodApi.dbhelper
         public int ExpireDays { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual ICollection<Community> Communities { get; set; }
         public virtual ICollection<FridgeProduct> FridgeProducts { get; set; }
     }
 
@@ -60,14 +48,11 @@ namespace FoodApi.dbhelper
             : base(options) { }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Community> Communities { get; set; }
         public DbSet<FridgeProduct> fridgeProducts { get; set; }
         public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Community>()
-                .HasKey(c => new { c.Id});
 
             modelBuilder.Entity<FridgeProduct>()
                 .HasKey(FP => new { FP.Id });
@@ -75,11 +60,6 @@ namespace FoodApi.dbhelper
             modelBuilder.Entity<Product>()
                 .HasKey(P => new { P.Id });
 
-            modelBuilder.Entity<Community>()
-                .HasOne(c=> c.Product)
-                .WithMany(c=> c.Communities)
-                .HasForeignKey(fk=> new { fk.productId})
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
             modelBuilder.Entity<FridgeProduct>()
                 .HasOne(FP=> FP.Product)

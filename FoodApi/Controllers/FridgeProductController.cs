@@ -71,7 +71,6 @@ namespace FoodApi.Controllers
             {
                 ProductId = FridgeProduct.ProductId,
                 quantity = FridgeProduct.Quantity,
-                IsActive = true,
                 CreateDate = DateTime.Now,
             };
 

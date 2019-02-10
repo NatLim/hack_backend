@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodApi.Migrations
 {
     [DbContext(typeof(AppDB))]
-    [Migration("20190210041723_init")]
-    partial class init
+    [Migration("20190210090545_karl")]
+    partial class karl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,32 +30,12 @@ namespace FoodApi.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("FoodApi.dbhelper.Community", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Method");
-
-                    b.Property<string>("Status");
-
-                    b.Property<int>("productId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("productId");
-
-                    b.ToTable("Communities");
-                });
-
             modelBuilder.Entity("FoodApi.dbhelper.FridgeProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreateDate");
-
-                    b.Property<bool>("IsActive");
 
                     b.Property<int>("ProductId");
 
@@ -84,14 +64,6 @@ namespace FoodApi.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("FoodApi.dbhelper.Community", b =>
-                {
-                    b.HasOne("FoodApi.dbhelper.Product", "Product")
-                        .WithMany("Communities")
-                        .HasForeignKey("productId")
-                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("FoodApi.dbhelper.FridgeProduct", b =>
