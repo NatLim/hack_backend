@@ -54,6 +54,11 @@ namespace FoodApi.Controllers
             return _context.fridgeProducts.Where(i => i.CreateDate.AddDays(i.Product.ExpireDays-2) > DateTime.Now);
         }
 
+        [HttpGet("category/{id}")]
+        public IEnumerable<FridgeProduct> GetFridgeProductsByCategoryId(int id)
+        {
+            return _context.fridgeProducts.Where(fp => fp.Product.CategoryId == id).ToList();
+        }
 
 
 
@@ -77,13 +82,18 @@ namespace FoodApi.Controllers
         }
         
         // PUT: api/FridgeProduct/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPost("edit/{id}")]
+        public IActionResult Put(int id, [FromBody]FridgeProductVM fridgeProductVM)
         {
+            FridgeProduct fridgeProduct = _context.fridgeProducts.Where(fp => fp.Id == id).FirstOrDefault();
+            fridgeProduct.quantity = fridgeProductVM.Quantity;
+            _context.SaveChanges();
+            return Ok(fridgeProduct);
+
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpPost("delete/{id}")]
+        [HttpGet("delete/{id}")]
         public IActionResult Delete(int id)
         {
             FridgeProduct fridgeProduct = _context.fridgeProducts.Where(fp => fp.Id == id).FirstOrDefault();
