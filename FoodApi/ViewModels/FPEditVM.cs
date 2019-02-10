@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace FoodApi.ViewModels
 {
-    public class FridgeProductVM
+    public class FPEditVM
     {
-        public int ProductId {get; set;}
         public decimal Quantity { get; set; }
-        public string Status { get; set; }
+        public string Action { get; set; }
     }
 }

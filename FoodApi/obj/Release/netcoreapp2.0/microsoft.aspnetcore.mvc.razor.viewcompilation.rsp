@@ -1,5 +1,5 @@
-D:\hack\hack_backend\FoodApi
+C:\Users\Karl\source\repos\FoodApi\FoodApi
 --output-path=obj\Release\netcoreapp2.0\
 --application-name=FoodApi
---content-root=D:\hack\hack_backend\FoodApi
+--content-root=C:\Users\Karl\source\repos\FoodApi\FoodApi
 --file=

@@ -21,3 +21,4 @@ D:\hack\hack_backend\FoodApi\obj\Release\netcoreapp2.0\FoodApi.AssemblyInfoInput
 D:\hack\hack_backend\FoodApi\obj\Release\netcoreapp2.0\FoodApi.AssemblyInfo.cs
 D:\hack\hack_backend\FoodApi\obj\Release\netcoreapp2.0\FoodApi.dll
 D:\hack\hack_backend\FoodApi\obj\Release\netcoreapp2.0\FoodApi.pdb
+C:\Users\Karl\source\repos\FoodApi\FoodApi\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs

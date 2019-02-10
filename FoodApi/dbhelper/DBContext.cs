@@ -25,6 +25,7 @@ namespace FoodApi.dbhelper
         public int ProductId { get; set; }
         public decimal quantity { get; set; }
         public DateTime CreateDate { get; set; }
+        public string Status { get; set; }
 
         public virtual Product Product { get; set; }
 
@@ -37,6 +38,7 @@ namespace FoodApi.dbhelper
         public int CategoryId { get; set; }
         public string Name { get; set; }
         public int ExpireDays { get; set; }
+        public string NutritionDetails { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual ICollection<FridgeProduct> FridgeProducts { get; set; }
@@ -73,8 +75,8 @@ namespace FoodApi.dbhelper
                 .HasForeignKey(fk=> new { fk.CategoryId})
                 .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
+
+
         }
-
-
     }
 }

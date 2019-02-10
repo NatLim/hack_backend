@@ -20,3 +20,4 @@ D:\hack\hack_backend\FoodApi\obj\Debug\netcoreapp2.0\FoodApi.AssemblyInfoInputs.
 D:\hack\hack_backend\FoodApi\obj\Debug\netcoreapp2.0\FoodApi.AssemblyInfo.cs
 D:\hack\hack_backend\FoodApi\obj\Debug\netcoreapp2.0\FoodApi.dll
 D:\hack\hack_backend\FoodApi\obj\Debug\netcoreapp2.0\FoodApi.pdb
+C:\Users\Karl\source\repos\FoodApi\FoodApi\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
